@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production"
+    "start": "rm -rf dist && NODE_ENV=development webpack-dev-server --open --config ./webpack.config.js --hot --inline",
+    "build": "rm -rf dist && NODE_ENV=production  webpack --mode production"
   },
   "author": "",
   "license": "ISC",
@@ -19,7 +19,8 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "webpack": "^4.28.2",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {}
 }

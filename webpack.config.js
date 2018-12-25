@@ -1,8 +1,14 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const NODE_ENV = process.env.NODE_ENV;
 
 module.exports = {
+  mode: NODE_ENV || 'production',
+  devServer: {
+    port: 3000,
+    contentBase: path.resolve(__dirname, './dest')
+  },
   entry: './src/assets/js/index.js',
   output: {
     filename: 'js/bundle.js',
